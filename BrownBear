@@ -1,0 +1,55 @@
+public class BrownBear extends Animal implements Walkable { 
+	
+	private String subSpecies;
+	String Siberian;
+	
+	public BrownBear() {
+		
+		simID = 0;
+		Location = [0,0];
+		full = false;
+		rested = true;
+		subSpecies = Siberian;
+		
+		
+	}
+	
+	public BrownBear (int simID, Location I, String subSpecies) {
+		this.simID = simID;
+		this.Location = Location;
+		this.subSpecies = subSpecies;
+		this.full = false;
+		this.rested = true;
+		
+	}
+
+	public String getSubSpecies() {
+		return subSpecies;
+	}
+
+	public void setSubSpecies(String subSpecies) {
+		this.subSpecies = subSpecies;
+	}
+
+	public String getSiberian() {
+		return Siberian;
+	}
+
+	public void setSiberian(String siberian) {
+		Siberian = siberian;
+	}
+
+	@Override
+	public String toString() {
+		return "BrownBear [subSpecies=" + subSpecies + ", Siberian=" + Siberian + "]";
+	}
+
+	@Override
+	public void walk(int direction) {
+		
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,11 @@
+
+public class RunTimeException extends Location {
+	
+	public RunTimeException(String message) {
+		
+		super();
+	}
+	
+	
+
+}

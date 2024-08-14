@@ -1,0 +1,41 @@
+public class Goldfinch<wingSpan> extends Animal implements Walkable {
+	private double wingSpan;
+	
+	public Goldfinch() {
+		simID = 0;
+		Location = [0,0];
+		full = false;
+		rested = true;
+		wingSpan = 9.0;
+		
+	}
+	
+	public Goldfinch(int simID, Location I, wingSpan ws) {
+		this.simID = simID;
+		this.Location = Location;
+		this.wingSpan = wingSpan;
+		
+	}
+
+	public double getWingSpan() {
+		return wingSpan;
+	}
+
+	public void setWingSpan(double wingSpan) {
+		this.wingSpan = wingSpan;
+	}
+
+	@Override
+	public String toString() {
+		return "Goldfinch [wingSpan=" + wingSpan + "]";
+	}
+
+	@Override
+	public void walk(int direction) {
+		
+		
+	}
+	
+	
+
+}

@@ -1,1 +1,37 @@
 
+
+public class Application {
+
+	
+
+	public static void main(String[] args) {
+		
+		System.out.println("*********************");
+		System.out.print("Location tests");
+		System.out.println();
+		
+		System.out.println("\n*******************");
+		//end location test
+		System.out.println("*********************");
+		System.out.print("Animal tests");
+	
+		
+		System.out.println("\n*******************");
+		//end Animal test
+		System.out.println("*********************");
+		System.out.print("Goldfinch tests");
+		
+		System.out.println("\n*******************");
+		//end Goldfinch test
+		System.out.println("*********************");
+		System.out.print("BrownBear tests");
+		
+		
+		
+		System.out.println("\n*******************");
+		//end brown bear test
+		
+
+	}//end class
+
+}//end main

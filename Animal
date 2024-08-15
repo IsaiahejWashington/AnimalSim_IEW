@@ -1,9 +1,9 @@
 import java.util.Random;
 
-public abstract class Animal {
+public abstract class Animal extends Location {
 	
 	protected int simID;
-	protected int Location;
+	protected Location location;
 	protected boolean full;
 	protected boolean rested;
 	
@@ -11,74 +11,76 @@ public abstract class Animal {
 	
 	public Animal() {
 		simID = 0;
-		Location = [0,0];//why is there an error message here?
+		location = new Location(0, 0);//why is there an error message here?
 		full = false;
-		rested = true 
+		rested = true;
 		
-	}
+	}//end-empty argument constructor
 	
 	public Animal(int simID, Location I) {
 		this.simID = simID;
-		this.Location = Location;
+		this.location = location;
 		this.full = false;
 		this.rested = true;
 		
-	}
+	}//end preferred argument constructor
 	
 	public boolean eat() {
 		Random r = new Random();
-		
-		if (r<.5) {
-			return full = false;
-		}
-		(r>.5)
-		return full = true;
-		
-		
+		if(r.nextFloat()<=0.5) {
+		full = false;
 	}
+		else {
+			full = true;
+		}
+		return full;		
+	}//end eat boolean
 	
 	public boolean sleep() {
 		Random r = new Random();
-		
-		if(r<.5) {
-			return rested = false;
-			}
-		(r>.5)
-		return rested = true;
-		
-	}
+		if (r.nextFloat()<=0.5) {
+			rested = false;
+		}
+		else {
+			rested = true;
+		}
+		return rested;	
+	}//end sleep boolean
 
 	public int getSimID() {
 		return simID;
-	}
+	}//end getSimId
 
-	public void setSimID(int simID) {
+	public void setSimID(int simID) throws InvalidSimIDException {
+		if(simID<0) {
+			throw new InvalidSimIDException("SimID cannot be less than 0.");
+		}
 		this.simID = simID;
-	}
+	}//end setSimID
 
-	public int getLocation() {
-		return Location;
-	}
+	public Location getLocation() {
+		return location;
+	}//end GetLocation
 
 	public void setLocation(int location) {
-		Location = location;
-	}
+		location = location;
+	}//end setLocation
 
 	public boolean isFull() {
 		return full;
-	}
+	}//end isFull
 
 	public void setFull(boolean full) {
 		this.full = full;
-	}
+	}//end setFull
 
 	public boolean isRested() {
 		return rested;
-	}
+	}//end isRested
 
 	public void setRested(boolean rested) {
 		this.rested = rested;
-	}
+	}//end setRested
 
 	
-}
+}//end class

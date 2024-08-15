@@ -1,10 +1,12 @@
 
-@SuppressWarnings("serial")
-public class InvalidCoordinateException extends Location {
+public class InvalidCoordinateException extends Exception {
 	
 	public InvalidCoordinateException(String message) {
-		
-		super();
+		super(message);
 	}
+	
+	
+	
+	
 
-}
+}//end class

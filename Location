@@ -1,3 +1,4 @@
+
 public class Location {
 	
 	 private int xCoord;
@@ -7,32 +8,35 @@ public class Location {
 		 xCoord = 0;
 		 yCoord = 0;
 		 
-	 }
+	 }//end empty argument constructor
 	 
 	 public Location(int x, int y) {
 		 this.xCoord = x;
 		 this.yCoord = y;
 		 
-	 }
+	 }//end preferred argument constructor
 	 
 	 public void update(int x, int y) {
 		 
 		 
-	 }
+	 }//end update
 	 
-	 public int []getCoordinates()  {
-		
-		
-		 return arrayList;
+	 public int [][]getCoordinates()  {
 		 
-	 }
+		return null;
+			 
+	 }//end getCoordinates
 	 
-	 try {
-	
-		 
-	 }
-	 catch(InvalidCoordinateException e) {
-		 
-	 }
+	public void setLocation (int x, int y) throws InvalidCoordinateException{
+		if(x<0) {
+			throw new InvalidCoordinateException("X Coordinate cannot be less than zero. ");
+		}
+		if(y<0) {
+			throw new InvalidCoordinateException("Y Coordinate cannot be less than zero. ");
+		}
+		//System.out.println("");
+		
+	}//end setLocation
 
 }//end class
+

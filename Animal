@@ -1,6 +1,8 @@
-import java.util.Random;
 
-public abstract class Animal extends Location {
+	import java.util.Random;
+//import CustomExceptions.InvalidSimIDException;
+
+public abstract class Animal extends CustomExceptions {
 	
 	protected int simID;
 	protected Location location;
@@ -17,7 +19,7 @@ public abstract class Animal extends Location {
 		
 	}//end-empty argument constructor
 	
-	public Animal(int simID, Location I) {
+	public Animal(int simID, Location location) {
 		this.simID = simID;
 		this.location = location;
 		this.full = false;
@@ -51,19 +53,20 @@ public abstract class Animal extends Location {
 		return simID;
 	}//end getSimId
 
-	public void setSimID(int simID) throws InvalidSimIDException {
-		if(simID<0) {
-			throw new InvalidSimIDException("SimID cannot be less than 0.");
-		}
-		this.simID = simID;
-	}//end setSimID
+	 public void setSimID(int simID) throws InvalidSimIDException {
+	        if (simID < 0) {
+	            throw new InvalidSimIDException("SimID cannot be less than 0.");
+	        }
+	        this.simID = simID;
+	    }//end setSimID
+	
 
 	public Location getLocation() {
 		return location;
 	}//end GetLocation
 
 	public void setLocation(int location) {
-		location = location;
+		this.location = getLocation();
 	}//end setLocation
 
 	public boolean isFull() {
@@ -81,6 +84,13 @@ public abstract class Animal extends Location {
 	public void setRested(boolean rested) {
 		this.rested = rested;
 	}//end setRested
+
+	@Override
+	public String toString() {
+		return "Animal [simID=" + simID + ", location=" + location + ", full=" + full + ", rested=" + rested + "]";
+	}//end toString
+	
+	
 
 	
 }//end class

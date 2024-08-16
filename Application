@@ -1,5 +1,6 @@
 
 
+
 public class Application {
 
 	
@@ -8,25 +9,36 @@ public class Application {
 		
 		System.out.println("*********************");
 		System.out.print("Location tests");
-		System.out.println();
 		
+		
+		Location location = new Location(4,5);
+		System.out.println("\n"+location);
+	
 		System.out.println("\n*******************");
 		//end location test
 		System.out.println("*********************");
 		System.out.print("Animal tests");
-	
+		
+		Animal a1 = new BrownBear();
+		System.out.println("\n"+a1);
+		Animal a2 = new Goldfinch();
+		System.out.println("\n"+a2);
 		
 		System.out.println("\n*******************");
 		//end Animal test
 		System.out.println("*********************");
 		System.out.print("Goldfinch tests");
 		
+		Goldfinch g1 = new Goldfinch();
+		System.out.println("\n"+g1.toString());
+		
 		System.out.println("\n*******************");
 		//end Goldfinch test
 		System.out.println("*********************");
 		System.out.print("BrownBear tests");
 		
-		
+		BrownBear b1 = new BrownBear();
+		System.out.println("\n"+b1.toString());
 		
 		System.out.println("\n*******************");
 		//end brown bear test

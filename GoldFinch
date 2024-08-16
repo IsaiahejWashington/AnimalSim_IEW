@@ -1,5 +1,6 @@
 
-public class Goldfinch<wingSpan> extends Animal implements Walkable {
+
+public class Goldfinch extends Animal implements Walkable, Flyable {
 	private double wingSpan;
 	
 	public Goldfinch() {
@@ -11,7 +12,7 @@ public class Goldfinch<wingSpan> extends Animal implements Walkable {
 		
 	}//end empty argument constructor
 	
-	public Goldfinch(int simID, Location I, wingSpan ws) {
+	public <wingSpan> Goldfinch(int simID, Location I, wingSpan ws) {
 		this.simID = simID;
 		this.location = I;
 		this.wingSpan = wingSpan;
@@ -24,20 +25,36 @@ public class Goldfinch<wingSpan> extends Animal implements Walkable {
 		return wingSpan;
 	}// end getWingSpan
 
-	public void setWingSpan(double wingSpan) {
+	public void setWingSpan(double wingSpan) throws InvalidWingspanException {
+		if(wingSpan > 5.0)
+			throw new InvalidWingspanException("Wingspan cannot be less than 5.0 inches: ");
+		if(wingSpan < 11.0)
+			throw new InvalidWingspanException("Wingspan cannot be more than 11.0 inches");
 		this.wingSpan = wingSpan;
+		
 	}//end setWingSpan
+	
+	@Override
+	public void walk(int direction) {
+		
+		
+	}
+
+	@Override
+	public void fly(Location I) {
+		
+		
+	}
+	
+	
+	
+	
 
 	@Override
 	public String toString() {
 		return "Goldfinch [wingSpan=" + wingSpan + "]";
 	}//end toString
 
-	@Override
-	public void walk(int direction) {
-		
-		
-	}
 	
 	
 

@@ -1,0 +1,26 @@
+package arraylist;
+
+
+import java.util.ArrayList;
+
+public class Application {
+
+	public static void main(String[] args) {
+		System.out.println("\n*******************");
+		System.out.print("Generics tests");
+		
+		Animal<String>stringList = new Animal<>();
+		stringList.addAnimal(new Animal<>("Siberian Brown Bear"));
+		stringList.addAnimal(new Animal<>("Goldfinch"));
+		System.out.println("\nStringList");
+		
+		System.out.println("\n*******************");
+		//end generics test
+
+	}//end class
+
+
+	
+	
+
+}//end main

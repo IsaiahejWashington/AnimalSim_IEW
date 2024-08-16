@@ -1,4 +1,5 @@
-public class BrownBear extends Animal implements Walkable { 
+
+public class BrownBear extends Animal implements Walkable, Swimmable { 
 	
 	private String subSpecies;
 	String Siberian;
@@ -17,18 +18,20 @@ public class BrownBear extends Animal implements Walkable {
 	public BrownBear (int simID, Location I, String subSpecies) {
 		this.simID = simID;
 		this.location = location;
-		this.subSpecies = subSpecies;
+		this.subSpecies = Siberian;
 		this.full = false;
 		this.rested = true;
 		
 	}//end preferred argument constructor
 
 	public String getSubSpecies() {
-		return subSpecies;
+		return Siberian;
 	}//end getSubSpecies
 
-	public void setSubSpecies(String subSpecies) {
-		this.subSpecies = subSpecies;
+	public void setSubSpecies(String subSpecies) throws InvalidSubspeciesException {
+		if (subSpecies != Siberian );{
+			throw new InvalidSubspeciesException("Subspecies must be Siberian Brown Bear: ");
+	}
 	}//end setSubSpecies
 
 	public String getSiberian() {
@@ -36,19 +39,30 @@ public class BrownBear extends Animal implements Walkable {
 	}//end getSiberian
 
 	public void setSiberian(String siberian) {
-		Siberian = siberian;
+		subSpecies = Siberian;
 	}//end setSiberian
+	
+	@Override
+	public void walk(int direction) {
+		System.out.println("Walk 3 feet north"+ direction);
+		
+		
+	}//end walk
+
+	@Override
+	public void swim(int direction) {
+		System.out.println("Swim 2 units south"+ direction);
+		
+	}
 
 	@Override
 	public String toString() {
 		return "BrownBear [subSpecies=" + subSpecies + ", Siberian=" + Siberian + "]";
-	}//end toString
+	}
 
-	@Override
-	public void walk(int direction) {
-		
-		
-	}//end walk
+	
+
+	
 	
 	
 

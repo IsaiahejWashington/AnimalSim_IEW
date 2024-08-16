@@ -1,0 +1,30 @@
+
+public class CustomExceptions extends Exception {
+	
+    public static class InvalidCoordinateException extends Exception {
+        public InvalidCoordinateException(String message) {
+            super(message);
+        }
+    }//end InvalidCoordinateException
+
+    
+    public static class InvalidSimIDException extends Exception {
+        public InvalidSimIDException(String message) {
+            super(message);
+        }
+    }//end InvalidSimIDException
+
+    public static class InvalidWingspanException extends Exception{
+    	public InvalidWingspanException(String message) {
+    		super(message);
+    	}
+    	
+    }//end InvalidWingspanException
+    
+    public static class InvalidSubspeciesException extends Exception{
+    	public InvalidSubspeciesException(String message) {
+    		super(message);
+    	}
+    }//endInvalidSubspeciesException
+
+}//end class

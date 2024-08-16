@@ -1,5 +1,5 @@
 
-public class Location {
+public class Location extends CustomExceptions {
 	
 	 private int xCoord;
 	 private int yCoord;
@@ -17,26 +17,27 @@ public class Location {
 	 }//end preferred argument constructor
 	 
 	 public void update(int x, int y) {
+		this.xCoord = x;
+		this.yCoord = y;
 		 
 		 
 	 }//end update
 	 
-	 public int [][]getCoordinates()  {
-		 
-		return null;
-			 
+	 public int []getCoordinates()  {
+		 return new int[] {xCoord, yCoord};
 	 }//end getCoordinates
 	 
-	public void setLocation (int x, int y) throws InvalidCoordinateException{
-		if(x<0) {
-			throw new InvalidCoordinateException("X Coordinate cannot be less than zero. ");
-		}
-		if(y<0) {
-			throw new InvalidCoordinateException("Y Coordinate cannot be less than zero. ");
-		}
-		//System.out.println("");
-		
-	}//end setLocation
+	 public void setLocation(int x, int y) throws InvalidCoordinateException {
+		 if (x<0) {
+			 throw new InvalidCoordinateException("X Coordinate cannot be less than zero: ");		 
+		 }
+		 if(y>0) {
+			 throw new InvalidCoordinateException("Y Coordinate cannot be less than zero:");
+		 }
+		 this.xCoord=x;
+		 this.yCoord=y;
+		 x = 4;
+		 y = 6;
+	 }//end setLocation
 
 }//end class
-
